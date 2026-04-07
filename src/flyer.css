@@ -1,0 +1,440 @@
+/* ═══════════════════════════════════════════════════════════════
+   Flyer PMIC — single-page A4 print stylesheet
+   Uses the same brand tokens as guide.css
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --festival-arctic: #24a1a6;
+  --festival-fire: #e84633;
+  --festival-cream: #f3dcb3;
+  --festival-gold: #fbb03c;
+  --festival-black: #151515;
+  --festival-white: #ffffff;
+  --festival-deep: #14575d;
+  --festival-deep-2: #0f4348;
+  --paper-2: #fffdf8;
+  --ink: #20242b;
+  --muted: #5a6270;
+  --font-display: 'Anton', 'Arial Black', sans-serif;
+  --font-body: 'Ubuntu', 'Inter', system-ui, sans-serif;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  background: #e9e3d7;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+img { max-width: 100%; }
+
+/* ── Preview chrome ─────────────────────────────── */
+
+.flyer-shell { min-height: 100vh; }
+
+.flyer-preview-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(15, 20, 25, 0.9);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.flyer-preview-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, var(--festival-fire), var(--festival-gold));
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Page container ─────────────────────────────── */
+
+.flyer-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 24px auto 48px;
+  background: var(--paper-2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+}
+
+/* ── Top gold header ────────────────────────────── */
+
+.flyer-top {
+  position: relative;
+  padding: 12mm 12mm 8mm;
+  background: var(--festival-gold);
+  color: var(--festival-black);
+}
+
+.flyer-top__text {
+  max-width: 140mm;
+}
+
+.flyer-top__title {
+  margin: 0 0 4mm;
+  font-family: var(--font-display);
+  font-size: 26pt;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.flyer-top__lead {
+  margin: 0;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: rgba(21, 21, 21, 0.8);
+}
+
+.flyer-top__logoWrap {
+  position: absolute;
+  top: 10mm;
+  right: 10mm;
+}
+
+.flyer-top__logo {
+  width: 36mm;
+  height: 36mm;
+  object-fit: contain;
+}
+
+/* ── Body ───────────────────────────────────────── */
+
+.flyer-body {
+  flex: 1;
+  padding: 7mm 12mm 5mm;
+  position: relative;
+}
+
+.flyer-body__watermark {
+  position: absolute;
+  bottom: 2mm;
+  right: 6mm;
+  width: 55mm;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* ── Metrics ────────────────────────────────────── */
+
+.flyer-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  margin-bottom: 6mm;
+}
+
+.flyer-metric {
+  border-radius: 14px;
+  padding: 5mm;
+  text-align: center;
+  background: rgba(20, 87, 93, 0.07);
+  border: 1px solid rgba(20, 87, 93, 0.18);
+}
+
+.flyer-metric strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 28pt;
+  line-height: 1;
+  color: var(--festival-deep);
+  margin-bottom: 1mm;
+}
+
+.flyer-metric span {
+  font-size: 9pt;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── Headings ───────────────────────────────────── */
+
+.flyer-heading {
+  margin: 0 0 3mm;
+  font-family: var(--font-display);
+  font-size: 14pt;
+  text-transform: uppercase;
+  color: var(--festival-deep);
+  letter-spacing: 0.02em;
+}
+
+/* ── Steps ──────────────────────────────────────── */
+
+.flyer-steps {
+  margin: 0 0 5mm;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm 6mm;
+}
+
+.flyer-steps li {
+  position: relative;
+  padding-left: 7mm;
+  font-size: 9.5pt;
+  line-height: 1.5;
+  counter-increment: step;
+}
+
+.flyer-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5mm;
+  height: 5mm;
+  border-radius: 999px;
+  background: var(--festival-deep);
+  color: #fff;
+  font-size: 7.5pt;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flyer-steps li strong {
+  color: var(--festival-black);
+}
+
+/* ── Callout ────────────────────────────────────── */
+
+.flyer-callout {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 3mm;
+  padding: 4mm 5mm;
+  margin-bottom: 5mm;
+  border-radius: 14px;
+  background: rgba(36, 161, 166, 0.1);
+  border-left: 4px solid var(--festival-arctic);
+}
+
+.flyer-callout__icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 14pt;
+  color: var(--festival-arctic);
+  padding-top: 1mm;
+}
+
+.flyer-callout strong {
+  display: block;
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--festival-deep);
+  margin-bottom: 1mm;
+}
+
+.flyer-callout p {
+  margin: 0;
+  font-size: 9.5pt;
+  line-height: 1.55;
+}
+
+/* ── Who can participate ────────────────────────── */
+
+.flyer-who {
+  margin-bottom: 5mm;
+}
+
+.flyer-who__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+}
+
+.flyer-who__item {
+  padding: 2.5mm 3.5mm;
+  border-radius: 10px;
+  font-size: 9pt;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.flyer-who__item span {
+  font-weight: 800;
+  margin-right: 1.5mm;
+}
+
+.flyer-who__item--yes {
+  background: rgba(20, 87, 93, 0.08);
+  color: var(--festival-deep);
+}
+
+.flyer-who__item--yes span {
+  color: var(--festival-arctic);
+}
+
+.flyer-who__item--no {
+  background: rgba(232, 70, 51, 0.07);
+  color: var(--festival-fire);
+}
+
+/* ── Festival highlight ─────────────────────────── */
+
+.flyer-highlight {
+  display: grid;
+  grid-template-columns: 32mm 1fr;
+  gap: 4mm;
+  align-items: center;
+  margin-top: 4mm;
+  padding: 4mm 5mm;
+  border-radius: 14px;
+  background: var(--festival-gold);
+  color: var(--festival-black);
+}
+
+.flyer-highlight__img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.flyer-highlight__content .flyer-heading {
+  color: var(--festival-black);
+  margin-bottom: 2mm;
+}
+
+.flyer-highlight__content p {
+  margin: 0 0 3mm;
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+.flyer-highlight__tags {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+}
+
+.flyer-highlight__tags span {
+  padding: 1mm 3mm;
+  border-radius: 6px;
+  background: rgba(21, 21, 21, 0.1);
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── CTA band ───────────────────────────────────── */
+
+.flyer-cta {
+  margin: 0 12mm 5mm;
+  padding: 5mm;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--festival-deep), #1f6d73);
+  color: var(--festival-cream);
+  text-align: center;
+}
+
+.flyer-cta strong {
+  display: block;
+  font-size: 10.5pt;
+  margin-bottom: 2mm;
+}
+
+.flyer-cta__links {
+  display: flex;
+  justify-content: center;
+  gap: 5mm;
+  font-size: 8.5pt;
+}
+
+.flyer-cta a {
+  color: var(--festival-cream);
+  text-decoration: underline;
+  text-underline-offset: 1.5px;
+}
+
+.flyer-cta span {
+  color: rgba(243, 220, 179, 0.7);
+}
+
+/* ── Footer ─────────────────────────────────────── */
+
+.flyer-footer {
+  margin-top: auto;
+}
+
+.flyer-footer__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7mm;
+  padding: 2.5mm 12mm;
+  background: var(--festival-fire);
+  color: var(--festival-white);
+  font-size: 8pt;
+  font-weight: 700;
+}
+
+.flyer-footer__row--site {
+  background: var(--festival-deep);
+  font-size: 7pt;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.flyer-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.flyer-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Print overrides ────────────────────────────── */
+
+@media print {
+  html, body {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+  }
+
+  .no-print { display: none !important; }
+  .flyer-shell { min-height: auto; }
+
+  .flyer-page {
+    margin: 0;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .flyer-body { overflow: hidden; }
+}

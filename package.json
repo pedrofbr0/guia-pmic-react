@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "export:pdf": "node scripts/export-pdf.mjs"
+    "export:pdf": "node scripts/export-pdf.mjs",
+    "export:flyer": "node scripts/export-flyer.mjs"
   },
   "devDependencies": {
     "@types/react-dom": "^19.2.3",
