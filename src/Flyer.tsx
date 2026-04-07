@@ -2,6 +2,7 @@ import './flyer.css';
 
 const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';
+const FESTIVAL_INSTAGRAM_URL = `https://www.instagram.com/${FESTIVAL_INSTAGRAM.replace('@', '')}`;
 const PMIC_SITE = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
 
 export default function Flyer() {
@@ -138,7 +139,7 @@ export default function Flyer() {
               Portal PMIC Uberlândia
             </a>
             <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
-            <span>{FESTIVAL_INSTAGRAM}</span>
+            <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
           </div>
         </div>
 
@@ -148,7 +149,7 @@ export default function Flyer() {
             <span>Norma vigente: Portaria Conjunta SMCT/SMF nº 55/2025 · Lei Municipal nº 14.006/2023</span>
           </div>
           <div className="flyer-footer__row">
-            <span>{FESTIVAL_INSTAGRAM}</span>
+            <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
             <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
           </div>
         </footer>
