@@ -375,7 +375,7 @@ function Page4() {
       <Section number={3} title="Quem pode usar o mecanismo">
         <p>Pela lei, o incentivador pode ser pessoa física ou jurídica contribuinte de IPTU ou ISSQN.</p>
         <Callout tone="warning" title="Atenção">
-          A Portaria Conjunta SMCT/SMF nº 55/2025 trouxe condições objetivas para autorização. Nem toda empresa interessada conseguirá usar o benefício.
+          A Portaria Conjunta SMCT/SMF nº 55/2025 trouxe condições objetivas para autorização. Nem toda empresa conseguirá usar o benefício.
         </Callout>
         <h3>Requisitos obrigatórios</h3>
         <BulletList items={[
@@ -385,7 +385,7 @@ function Page4() {
           'Atender aos critérios fiscais específicos da Secretaria de Finanças',
         ]} />
         <Callout tone="info" title="Validação necessária">
-          Antes de avançar, a empresa deve validar sua situação tributária e documental com seu contador e com a Prefeitura.
+          Valide sua situação tributária e documental com seu contador e com a Prefeitura antes de avançar.
         </Callout>
       </Section>
 
@@ -405,10 +405,10 @@ function Page4() {
           ))}
         </div>
         <Callout tone="important" title="Proibido">
-          A lei proíbe o incentivador de alterar planilha orçamentária, metas ou ações do projeto aprovado. Isso pode levar ao cancelamento do projeto e à responsabilização.
+          A lei proíbe o incentivador de alterar planilha orçamentária, metas ou ações do projeto aprovado.
         </Callout>
         <p className="small-note">
-          Onde encontrar projetos aprovados: o programa divulga resultados dos editais no portal oficial do PMIC. É recomendável contato direto com os proponentes para confirmar aptidão para captação via Incentivo Fiscal.
+          O programa divulga resultados dos editais no portal oficial do PMIC. Contate os proponentes para confirmar aptidão para captação via Incentivo Fiscal.
         </p>
       </Section>
     </PageShell>
@@ -475,7 +475,7 @@ function Page6() {
           ]} />
         </div>
         <Callout tone="warning" title="Após a captação">
-          O proponente entrega a Declaração de Intenção (DI) em quatro vias, assinadas pelo proponente e assinadas/carimbadas pelo incentivador, acompanhada dos documentos da empresa e da CND do incentivador.
+          O proponente entrega a DI em quatro vias, assinadas pelo proponente e assinadas/carimbadas pelo incentivador, acompanhada dos documentos da empresa e da CND.
         </Callout>
       </Section>
 
@@ -486,7 +486,7 @@ function Page6() {
           <p>Pela lei, a obtenção do incentivo fiscal depende da apresentação da documentação do incentivador e do projeto cultural, conforme modelo e condições definidos em ato normativo.</p>
         </div>
         <Callout tone="important" title="Prazo crítico">
-          A Portaria 55/2025 determina que a DI deve ser apresentada pelo proponente à Secretaria Municipal de Cultura e Turismo até o último dia útil da primeira quinzena do mês anterior à data programada para o primeiro depósito na conta vinculada ao projeto.
+          A Portaria 55/2025 determina que a DI deve ser apresentada à Secretaria Municipal de Cultura e Turismo até o último dia útil da primeira quinzena do mês anterior à data do primeiro depósito na conta do projeto.
         </Callout>
         <div className="soft-panel soft-panel--compact">
           <h3>Formato da DI</h3>
@@ -626,7 +626,10 @@ export default function App() {
     <div className="guide-shell">
       <div className="guide-preview-toolbar no-print">
         <span>Preview do documento PDF</span>
-        <button onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '12px', opacity: 0.7 }}>Para PDF perfeito: npm run export:pdf</span>
+          <button onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+        </div>
       </div>
       <div className="guide-document">
         <CoverPage />
