@@ -1,9 +1,17 @@
 import './flyer.css';
 
+const SITE_URL = 'https://www.festivalmqv.com.br';
+const SITE_NAME = SITE_URL.replace('https://www.', '');
 const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';
 const FESTIVAL_INSTAGRAM_URL = `https://www.instagram.com/${FESTIVAL_INSTAGRAM.replace('@', '')}`;
+const FESTIVAL_TIKTOK = '@festivalmaisqueviaduto';
+const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/${FESTIVAL_TIKTOK.replace('@', '')}`;
+const FESTIVAL_X_URL = 'https://x.com/maisqueviaduto';
+const FESTIVAL_X = '@maisqueviaduto';
 const PMIC_SITE = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
+const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/07/7152.pdf';
+const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
 
 export default function Flyer() {
   return (
@@ -39,7 +47,7 @@ export default function Flyer() {
           {/* Metrics row */}
           <div className="flyer-metrics">
             <article className="flyer-metric">
-              <strong>até 3%</strong>
+              <strong>até 25%</strong>
               <span>de dedução sobre o ISSQN mensal próprio</span>
             </article>
             <article className="flyer-metric">
@@ -133,24 +141,36 @@ export default function Flyer() {
 
         {/* ── CTA band ── */}
         <div className="flyer-cta">
-          <strong>Quer saber mais? Acesse o guia completo ou entre em contato</strong>
+          <strong>Quer saber mais? Acesse os links e entre em contato</strong>
           <div className="flyer-cta__links">
-            <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer">
-              Portal PMIC Uberlândia
-            </a>
-            <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
-            <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
+            <div className="flyer-cta__cluster">
+              <div className="flyer-cta__cluster-links">
+                <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer">
+                  {PMIC_SITE.replace('https://', '')}
+                </a>
+                <a href="tel:+553432143266">(34) 3214-3266</a>
+                <a href="mailto:pmic@uberlandia.mg.gov.br">pmic@uberlandia.mg.gov.br</a>
+              </div>
+              <h3 className="flyer-cta__cluster-title">PMIC Uberlândia</h3>
+            </div>
+
+            <div className="flyer-cta__cluster">
+              <div className="flyer-cta__cluster-links">
+                <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
+                <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+                <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
+              </div>
+              <h3 className="flyer-cta__cluster-title">Festival +QV</h3>
+            </div>
           </div>
         </div>
 
         {/* ── Footer ── */}
         <footer className="flyer-footer">
           <div className="flyer-footer__row flyer-footer__row--site">
-            <span>Norma vigente: Portaria Conjunta SMCT/SMF nº 55/2025 · Lei Municipal nº 14.006/2023</span>
-          </div>
-          <div className="flyer-footer__row">
-            <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
-            <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+            <span>
+              Norma vigente: <a href={PORTARIA_SMCT_N_55_2025_URL} target="_blank" rel="noopener noreferrer">Portaria Conjunta SMCT/SMF nº 55/2025</a> · Lei Municipal nº 14.006/2023 sobre o <a href={EDITAL_SMCT_N_11_2025_URL} target="_blank" rel="noopener noreferrer">Edital SMCT nº 11/2025</a>
+            </span>
           </div>
         </footer>
       </section>

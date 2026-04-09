@@ -126,7 +126,7 @@ img { max-width: 100%; }
 
 .flyer-body {
   flex: 1;
-  padding: 7mm 12mm 5mm;
+  padding: 5mm 12mm 3mm;
   position: relative;
 }
 
@@ -144,8 +144,8 @@ img { max-width: 100%; }
 .flyer-metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4mm;
-  margin-bottom: 6mm;
+  gap: 3mm;
+  margin-bottom: 4mm;
 }
 
 .flyer-metric {
@@ -185,12 +185,12 @@ img { max-width: 100%; }
 /* ── Steps ──────────────────────────────────────── */
 
 .flyer-steps {
-  margin: 0 0 5mm;
+  margin: 0 0 3mm;
   padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5mm 6mm;
+  gap: 2mm 6mm;
 }
 
 .flyer-steps li {
@@ -228,9 +228,9 @@ img { max-width: 100%; }
   display: grid;
   grid-template-columns: 8mm 1fr;
   gap: 3mm;
-  padding: 4mm 5mm;
-  margin-bottom: 5mm;
-  border-radius: 14px;
+  padding: 3mm 4mm;
+  margin-bottom: 3mm;
+  border-radius: 12px;
   background: rgba(36, 161, 166, 0.1);
   border-left: 4px solid var(--festival-arctic);
 }
@@ -262,7 +262,7 @@ img { max-width: 100%; }
 /* ── Who can participate ────────────────────────── */
 
 .flyer-who {
-  margin-bottom: 5mm;
+  margin-bottom: 3mm;
 }
 
 .flyer-who__grid {
@@ -302,12 +302,12 @@ img { max-width: 100%; }
 
 .flyer-highlight {
   display: grid;
-  grid-template-columns: 32mm 1fr;
-  gap: 4mm;
+  grid-template-columns: 28mm 1fr;
+  gap: 3mm;
   align-items: center;
-  margin-top: 4mm;
-  padding: 4mm 5mm;
-  border-radius: 14px;
+  margin-top: 2mm;
+  padding: 3mm 4mm;
+  border-radius: 12px;
   background: var(--festival-gold);
   color: var(--festival-black);
 }
@@ -347,35 +347,64 @@ img { max-width: 100%; }
 /* ── CTA band ───────────────────────────────────── */
 
 .flyer-cta {
-  margin: 0 12mm 5mm;
-  padding: 5mm;
-  border-radius: 14px;
+  margin: 0 12mm 4mm;
+  padding: 3.5mm 5mm;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--festival-deep), #1f6d73);
   color: var(--festival-cream);
-  text-align: center;
 }
 
-.flyer-cta strong {
+.flyer-cta > strong {
   display: block;
-  font-size: 10.5pt;
-  margin-bottom: 2mm;
+  font-size: 9.5pt;
+  margin-bottom: 2.5mm;
+  text-align: center;
+  color: var(--festival-cream);
 }
 
 .flyer-cta__links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm;
+}
+
+.flyer-cta__cluster {
   display: flex;
-  justify-content: center;
-  gap: 5mm;
-  font-size: 8.5pt;
+  flex-direction: column;
+  gap: 1mm;
+  padding: 2mm 3mm;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
 }
 
-.flyer-cta a {
+.flyer-cta__cluster-title {
+  margin: 0;
+  font-size: 7pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--festival-gold);
+  line-height: 1;
+}
+
+.flyer-cta__cluster-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8mm;
+}
+
+.flyer-cta__cluster-links a {
+  font-size: 8pt;
   color: var(--festival-cream);
-  text-decoration: underline;
-  text-underline-offset: 1.5px;
+  text-decoration: none;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.flyer-cta span {
-  color: rgba(243, 220, 179, 0.7);
+.flyer-cta__cluster-links a:hover {
+  text-decoration: underline;
 }
 
 /* ── Footer ─────────────────────────────────────── */

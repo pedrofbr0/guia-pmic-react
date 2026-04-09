@@ -633,7 +633,7 @@ img {
 .accent-panel,
 .closing-panel {
   border-radius: 16px;
-  padding: 4mm;
+  padding: 2mm;
   margin: 3mm 0;
   page-break-inside: avoid;
   break-inside: avoid;
@@ -852,24 +852,24 @@ img {
 /* ─── Table of Contents ─────────────────────────────────────── */
 
 .toc-intro {
-  margin: 0 0 4mm;
-  font-size: 9.8pt;
-  line-height: 1.5;
+  margin: 0 0 2mm;
+  font-size: 8.8pt;
+  line-height: 1.4;
   color: var(--muted);
 }
 
 .toc-grid {
   display: grid;
-  gap: 2.5mm;
+  gap: 1.6mm;
 }
 
 .toc-entry {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 3mm;
-  padding: 3mm 4mm;
-  border-radius: 12px;
+  gap: 2.5mm;
+  padding: 2mm 3mm;
+  border-radius: 10px;
   border-left: 4px solid var(--festival-deep);
   background: rgba(20, 87, 93, 0.05);
   page-break-inside: avoid;
@@ -899,10 +899,10 @@ img {
 }
 
 .toc-entry__chapter {
-  font-size: 7.8pt;
+  font-size: 7pt;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: var(--festival-deep);
 }
 
@@ -911,16 +911,16 @@ img {
 }
 
 .toc-entry__title {
-  font-size: 11pt;
+  font-size: 10pt;
   font-weight: 700;
   color: var(--festival-black);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .toc-entry__subtitle {
-  font-size: 9pt;
+  font-size: 8pt;
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .toc-entry__page {
@@ -928,13 +928,13 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 10mm;
-  height: 10mm;
+  width: 9mm;
+  height: 9mm;
   border-radius: 999px;
   background: var(--festival-deep);
   color: #fff;
   font-weight: 900;
-  font-size: 11pt;
+  font-size: 10pt;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -945,14 +945,14 @@ img {
 }
 
 .toc-legend {
-  margin-top: 4mm;
-  padding: 3mm 4mm;
-  border-radius: 12px;
+  margin-top: 2.5mm;
+  padding: 2.5mm 3.5mm;
+  border-radius: 10px;
   background: rgba(243, 220, 179, 0.22);
   border: 1px solid rgba(243, 220, 179, 0.85);
-  font-size: 9pt;
+  font-size: 8pt;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 900px) {
@@ -983,4 +983,422 @@ img {
   .page-band__stripes {
     display: none;
   }
+}
+
+/* ─── Reference links box (Page 3 section 2) ────────────────── */
+
+.ref-links-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+  margin-top: 2mm;
+  padding: 2.5mm 3.5mm;
+  border-radius: 10px;
+  background: rgba(20, 87, 93, 0.06);
+  border-left: 3px solid var(--festival-arctic);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.ref-links-box__label {
+  font-size: 7.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--festival-deep);
+  margin-bottom: 0.5mm;
+}
+
+.ref-links-box a {
+  font-size: 8.5pt;
+  color: var(--festival-deep);
+  text-decoration: underline;
+  text-underline-offset: 1.5px;
+  line-height: 1.45;
+  word-break: break-all;
+}
+
+/* ─── Norma links (Page 11) ──────────────────────────────────── */
+
+.norma-link {
+  color: var(--festival-deep);
+  text-decoration: underline;
+  text-underline-offset: 1.5px;
+}
+
+/* ─── Festival page — layout ─────────────────────────────────── */
+
+.festival-quote {
+  border-left: 4px solid var(--festival-gold);
+  background: rgba(251, 176, 60, 0.10);
+  border-radius: 0 12px 12px 0;
+  padding: 3mm 4mm;
+  margin: 0 0 3mm;
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--festival-black);
+  line-height: 1.5;
+}
+
+.festival-data-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin: 2mm 0 3mm;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.festival-block-title,
+.contact-block-title {
+  font-size: 8pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--festival-deep);
+  margin-bottom: 1.5mm;
+}
+
+/* ─── Festival stats table ───────────────────────────────────── */
+
+.festival-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+}
+
+.festival-table td {
+  padding: 1.2mm 2.5mm;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+.festival-table tr:last-child td {
+  border-bottom: none;
+}
+
+.festival-table tr:nth-child(even) td {
+  background: rgba(20, 87, 93, 0.04);
+}
+
+.festival-table td:first-child {
+  font-weight: 600;
+  color: var(--festival-deep);
+  width: 52%;
+}
+
+/* ─── Festival offer cards ───────────────────────────────────── */
+
+.festival-offers-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.festival-offer-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.festival-offer-card header {
+  padding: 1.5mm 3mm;
+  font-size: 7.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.festival-offer-card--teal header { background: var(--festival-deep); }
+.festival-offer-card--teal { background: rgba(20, 87, 93, 0.04); }
+.festival-offer-card--fire header { background: var(--festival-fire); }
+.festival-offer-card--fire { background: rgba(232, 70, 51, 0.04); }
+
+.festival-offer-card .bullet-list {
+  padding: 2mm 3mm;
+}
+
+/* ─── Festival social tags ───────────────────────────────────── */
+
+.festival-socials {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+  margin-top: 2mm;
+}
+
+.festival-social-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5mm;
+  background: var(--festival-deep);
+  color: #fff;
+  border-radius: 999px;
+  padding: 1mm 3mm;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ─── Porte card highlight ───────────────────────────────────── */
+
+.porte-card--highlight {
+  background: var(--festival-deep) !important;
+  border-color: transparent !important;
+  color: #fff;
+}
+
+.porte-card--highlight strong {
+  color: var(--festival-gold) !important;
+}
+
+.porte-card--highlight span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Criteria table (Fazenda, step 7) ──────────────────────── */
+
+.criteria-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 1.5mm 0 0;
+}
+
+.criteria-table th {
+  background: var(--festival-deep);
+  color: #fff;
+  padding: 1.5mm 2.5mm;
+  text-align: left;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.criteria-table td {
+  padding: 1.2mm 2.5mm;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+.criteria-table tr:last-child td {
+  border-bottom: none;
+}
+
+.criteria-table tr:nth-child(even) td {
+  background: rgba(20, 87, 93, 0.04);
+}
+
+.criteria-table td:first-child {
+  font-weight: 600;
+  color: var(--festival-deep);
+  width: 42%;
+}
+
+/* ─── Timeline step rich content wrapper ────────────────────── */
+
+.step-lead {
+  margin: 0 0 1.5mm !important;
+  font-size: 9pt !important;
+  line-height: 1.45 !important;
+}
+
+.timeline-step__rich {
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+/* ─── Contact page ───────────────────────────────────────────── */
+
+.contact-cta-header {
+  background: linear-gradient(90deg, var(--festival-deep), #1f6d73);
+  color: var(--festival-cream);
+  border-radius: 14px;
+  padding: 4mm 6mm;
+  margin-bottom: 4mm;
+  text-align: center;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.contact-cta-header h2 {
+  margin: 0 0 1.5mm;
+  font-size: 15pt;
+  color: var(--festival-gold);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.contact-cta-header p {
+  margin: 0;
+  font-size: 9.5pt;
+  color: rgba(243, 220, 179, 0.9);
+  line-height: 1.5;
+}
+
+.contact-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin-bottom: 2mm;
+}
+
+.contact-table th {
+  background: var(--festival-fire);
+  color: #fff;
+  padding: 1.5mm 3mm;
+  text-align: left;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-table td {
+  padding: 1.8mm 3mm;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  line-height: 1.4;
+}
+
+.contact-table tr:last-child td {
+  border-bottom: none;
+}
+
+.contact-table tr:nth-child(even) td {
+  background: rgba(232, 70, 51, 0.04);
+}
+
+.contact-table td:first-child {
+  font-weight: 700;
+  color: var(--festival-deep);
+  width: 30%;
+}
+
+.contact-table a {
+  color: var(--festival-deep);
+  text-decoration: none;
+}
+
+.contact-table a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Team grid ──────────────────────────────────────────────── */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.team-card {
+  border-radius: 10px;
+  padding: 2.5mm 3mm;
+  background: rgba(20, 87, 93, 0.06);
+  border-left: 3px solid var(--festival-arctic);
+}
+
+.team-card__role {
+  display: block;
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.5mm;
+}
+
+.team-card__name {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--festival-black);
+}
+
+/* ─── PMIC contact box ───────────────────────────────────────── */
+
+.pmic-contact-box {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.pmic-contact-box header {
+  padding: 2mm 4mm;
+  background: var(--festival-deep);
+  color: var(--festival-cream);
+  font-size: 8.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pmic-contact-box__body {
+  padding: 3mm 4mm;
+  background: rgba(20, 87, 93, 0.04);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5mm;
+  font-size: 8.5pt;
+  line-height: 1.55;
+}
+
+.pmic-contact-box__body strong {
+  display: block;
+  color: var(--festival-deep);
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5mm;
+}
+
+.pmic-contact-box__body a {
+  color: var(--festival-deep);
+  text-decoration: none;
+}
+
+/* ─── Contact CTA note (festival badge on page 12) ──────────── */
+
+.contact-cta-note {
+  margin-top: 3mm;
+  padding: 3mm 4mm;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--festival-gold), rgba(251, 176, 60, 0.4));
+  border: 1px solid rgba(251, 176, 60, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.contact-cta-note__logo {
+  width: 14mm;
+  height: 14mm;
+  object-fit: contain;
+  opacity: 0.18;
+  flex-shrink: 0;
+}
+
+.contact-cta-note strong {
+  display: block;
+  font-size: 9.5pt;
+  color: var(--festival-black);
+}
+
+.contact-cta-note p {
+  margin: 0.5mm 0 0;
+  font-size: 8.5pt;
+  color: rgba(21, 21, 21, 0.75);
+  line-height: 1.4;
 }
