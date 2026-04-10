@@ -19,7 +19,8 @@ const FESTIVAL_TIKTOK = '@festivalmaisqueviaduto';
 const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/${FESTIVAL_TIKTOK.replace('@', '')}`;
 const FESTIVAL_X_URL = 'https://x.com/maisqueviaduto';
 const FESTIVAL_X = '@maisqueviaduto';
-const PMIC_SITE = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
+const PMIC_SITE_URL = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
+const PMIC_SITE_URL_PATH = PMIC_SITE_URL.replace('https://', '');
 const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/07/7152.pdf';
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
 const FESTIVAL_LOGO = '/logos/LOGO - FESTIVAL +QV 2026.png';
@@ -330,7 +331,7 @@ function CoverPage() {
 
       <footer className="cover-footer">
         <div className="cover-footer__row cover-footer__row--site">
-          <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer">{PMIC_SITE}</a>
+          <a href={PMIC_SITE_URL} target="_blank" rel="noopener noreferrer">{PMIC_SITE_URL_PATH}</a>
         </div>
         <div className="cover-footer__row">
           <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
@@ -485,7 +486,7 @@ function Page4() {
       <Callout tone="info" title="Outros projetos disponíveis">
         O Festival +QV é um dos projetos aprovados pelo PMIC para captação em 2026. A lista completa pode ser
         consultada no portal oficial:{' '}
-        <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>{PMIC_SITE}</a>
+        <a href={PMIC_SITE_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>{PMIC_SITE_URL_PATH}</a>
       </Callout>
 
       <div className="festival-socials">
@@ -833,7 +834,7 @@ function Page12() {
           </div>
           <p className="small-note" style={{ marginTop: '2mm' }}>
             <strong>Portal PMIC:</strong>{' '}
-            <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--festival-deep)', wordBreak: 'break-all' }}>{PMIC_SITE}</a>
+            <a href={PMIC_SITE_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--festival-deep)', wordBreak: 'break-all' }}>{PMIC_SITE_URL_PATH}</a>
           </p>
 
           <div className="contact-cta-note">
