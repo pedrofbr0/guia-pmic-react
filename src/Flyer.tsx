@@ -1,6 +1,6 @@
 import './flyer.css';
 
-const SITE_URL = 'https://www.festivalmqv.com.br';
+const SITE_URL = 'https://www.festivalmaisqueviaduto.com.br';
 const SITE_NAME = SITE_URL.replace('https://www.', '');
 const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';

@@ -10,7 +10,7 @@ type PageProps = { page: number; bandTitle: string; bandSubtitle: string; childr
 type TocEntry = { page: number; chapter: string; title: string; subtitle: string; alt?: boolean };
 
 const TOTAL_PAGES = 12;
-const SITE_URL = 'https://www.festivalmqv.com.br';
+const SITE_URL = 'https://www.festivalmaisqueviaduto.com.br';
 const SITE_NAME = SITE_URL.replace('https://www.', '');
 const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';
