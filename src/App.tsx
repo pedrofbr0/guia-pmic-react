@@ -22,7 +22,11 @@ const FESTIVAL_X = '@maisqueviaduto';
 const PMIC_SITE_URL = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
 const PMIC_SITE_URL_PATH = PMIC_SITE_URL.replace('https://', '');
 const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/07/7152.pdf';
+const PORTARIA_SMCT_N_55_2025_URL_PATH = PORTARIA_SMCT_N_55_2025_URL.replace('https://', '');
+const PORTARIA_SMCT_N_55_2025_REF = 'Portaria Conjunta SMCT/SMF nº 55/2025 (PDF - DOM nº 7152, pág. 4)';
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
+const EDITAL_SMCT_N_11_2025_URL_PATH = EDITAL_SMCT_N_11_2025_URL.replace('https://', '');
+const EDITAL_SMCT_N_11_2025_REF = ' Edital SMCT nº 11/2025 — PMIC Exercício 2026';
 const FESTIVAL_LOGO = '/logos/LOGO - FESTIVAL +QV 2026.png';
 
 const TOC_ENTRIES: TocEntry[] = [
@@ -418,10 +422,10 @@ function Page3() {
         <div className="ref-links-box">
           <span className="ref-links-box__label">Consulte os documentos oficiais:</span>
           <a href={PORTARIA_SMCT_N_55_2025_URL} target="_blank" rel="noopener noreferrer">
-            Portaria Conjunta SMCT/SMF nº 55/2025 (PDF — DOM nº 7152, pág. 4)
+            {PORTARIA_SMCT_N_55_2025_REF}<br />{PORTARIA_SMCT_N_55_2025_URL_PATH.replace('https://', '')}
           </a>
           <a href={EDITAL_SMCT_N_11_2025_URL} target="_blank" rel="noopener noreferrer">
-            Edital SMCT nº 11/2025 — PMIC Exercício 2026
+            {EDITAL_SMCT_N_11_2025_REF}<br />{EDITAL_SMCT_N_11_2025_URL_PATH.replace('https://', '')}
           </a>
         </div>
       </Section>
@@ -482,6 +486,12 @@ function Page4() {
           </article>
         </div>
       </div>
+
+      <Callout tone="success" title="Segurança para a empresa">
+        Se o Festival +QV não alcançar a captação necessária para viabilizar o orçamento aprovado, ele é tratado
+        como projeto não realizado. Para a empresa incentivadora, isso não gera penalidade nem problema adicional:
+        o apoio só avança dentro do fluxo oficial do PMIC, com autorização e documentação adequadas.
+      </Callout>
 
       <Callout tone="info" title="Outros projetos disponíveis">
         O Festival +QV é um dos projetos aprovados pelo PMIC para captação em 2026. A lista completa pode ser

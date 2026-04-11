@@ -1012,7 +1012,7 @@ img {
 .ref-links-box a {
   font-size: 8.5pt;
   color: var(--festival-deep);
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 1.5px;
   line-height: 1.45;
   word-break: break-all;
