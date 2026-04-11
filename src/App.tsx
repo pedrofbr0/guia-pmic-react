@@ -16,7 +16,7 @@ const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';
 const FESTIVAL_INSTAGRAM_URL = `https://www.instagram.com/${FESTIVAL_INSTAGRAM.replace('@', '')}`;
 const FESTIVAL_TIKTOK = '@festivalmaisqueviaduto';
-const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/${FESTIVAL_TIKTOK.replace('@', '')}`;
+const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/@${FESTIVAL_TIKTOK.replace('@', '')}`;
 const FESTIVAL_X_URL = 'https://x.com/maisqueviaduto';
 const FESTIVAL_X = '@maisqueviaduto';
 const PMIC_SITE_URL = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
@@ -26,7 +26,7 @@ const PORTARIA_SMCT_N_55_2025_URL_PATH = PORTARIA_SMCT_N_55_2025_URL.replace('ht
 const PORTARIA_SMCT_N_55_2025_REF = 'Portaria Conjunta SMCT/SMF nº 55/2025 (PDF - DOM nº 7152, pág. 4)';
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
 const EDITAL_SMCT_N_11_2025_URL_PATH = EDITAL_SMCT_N_11_2025_URL.replace('https://', '');
-const EDITAL_SMCT_N_11_2025_REF = ' Edital SMCT nº 11/2025 — PMIC Exercício 2026';
+const EDITAL_SMCT_N_11_2025_REF = 'Edital SMCT nº 11/2025 — PMIC Exercício 2026';
 const FESTIVAL_LOGO = '/logos/LOGO - FESTIVAL +QV 2026.png';
 
 const TOC_ENTRIES: TocEntry[] = [
@@ -90,7 +90,7 @@ const TOC_ENTRIES: TocEntry[] = [
   },
   {
     page: 12,
-    chapter: 'Capítulo 9',
+    chapter: 'Encerramento',
     title: 'Contato e Próximos Passos',
     subtitle: 'Como entrar em contato com o Festival +QV e o PMIC',
     alt: true,
@@ -116,15 +116,6 @@ const FAZENDA_CRITERIA: [string, string][] = [
   ['Acumulação de benefícios (Art. 2º, IV)', 'Acumulação com outro benefício fiscal não pode reduzir alíquota abaixo de 2%'],
   ['Simples Nacional (Art. 2º, V)', 'Incentivador NÃO pode ser optante pelo Simples Nacional'],
   ['CND (Art. 2º, VI)', 'Deve apresentar Certidão Negativa de Débitos perante o Município'],
-];
-
-const NORMAS_REFERENCIA: string[] = [
-  'Lei nº 14.006, de 06 de julho de 2023 (Lei do PMIC)',
-  'Portaria Conjunta SMCT/SMF nº 55/2025 — requisitos para incentivo fiscal (DOM nº 7152, 23/07/2025)',
-  'Edital SMCT nº 11/2025 — seleção de projetos PMIC exercício 2026',
-  'Deliberação CMPC nº 001/2025 — diretrizes e valores de porte',
-  'Instrução Normativa SMCT nº 001/2025 — prestação de contas',
-  'Lei Complementar Municipal nº 336/2003 — código tributário (ISSQN)',
 ];
 
 const TIMELINE_STEPS_PART1: Step[] = [
@@ -422,10 +413,10 @@ function Page3() {
         <div className="ref-links-box">
           <span className="ref-links-box__label">Consulte os documentos oficiais:</span>
           <a href={PORTARIA_SMCT_N_55_2025_URL} target="_blank" rel="noopener noreferrer">
-            {PORTARIA_SMCT_N_55_2025_REF}<br />{PORTARIA_SMCT_N_55_2025_URL_PATH.replace('https://', '')}
+            {PORTARIA_SMCT_N_55_2025_REF}<br />{PORTARIA_SMCT_N_55_2025_URL_PATH}
           </a>
           <a href={EDITAL_SMCT_N_11_2025_URL} target="_blank" rel="noopener noreferrer">
-            {EDITAL_SMCT_N_11_2025_REF}<br />{EDITAL_SMCT_N_11_2025_URL_PATH.replace('https://', '')}
+            {EDITAL_SMCT_N_11_2025_REF}<br />{EDITAL_SMCT_N_11_2025_URL_PATH}
           </a>
         </div>
       </Section>
@@ -445,7 +436,7 @@ function Page4() {
       <p style={{ margin: '0 0 2mm', fontSize: '9.5pt', lineHeight: 1.5 }}>
         O <strong>Festival Mais Que Viaduto (+QV)</strong> é um festival de música e arte que exalta a riqueza da
         cultura independente, celebra os artistas locais e incentiva o pulsar criativo de Uberlândia.
-        É um dos projetos aprovados pelo PMIC para o exercício de 2026.
+        É um dos projetos aprovados pelo PMIC para captação via Incentivo Fiscal em 2026.
       </p>
 
       <div className="festival-data-row">
@@ -493,17 +484,11 @@ function Page4() {
         o apoio só avança dentro do fluxo oficial do PMIC, com autorização e documentação adequadas.
       </Callout>
 
-      <Callout tone="info" title="Outros projetos disponíveis">
-        O Festival +QV é um dos projetos aprovados pelo PMIC para captação em 2026. A lista completa pode ser
-        consultada no portal oficial:{' '}
-        <a href={PMIC_SITE_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>{PMIC_SITE_URL_PATH}</a>
-      </Callout>
-
       <div className="festival-socials">
-        <a href={SITE_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag" >🌐 {SITE_NAME}</a>
-        <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag" >📸 {FESTIVAL_INSTAGRAM}</a>
-        <a href={FESTIVAL_TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag" >🎵 {FESTIVAL_TIKTOK} (TikTok)</a>
-        <a href={FESTIVAL_X_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag" >🐦 {FESTIVAL_X} (X/Twitter)</a>
+        <a href={SITE_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag">Site: {SITE_NAME}</a>
+        <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag">Instagram: {FESTIVAL_INSTAGRAM}</a>
+        <a href={FESTIVAL_TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag">TikTok: {FESTIVAL_TIKTOK}</a>
+        <a href={FESTIVAL_X_URL} target="_blank" rel="noopener noreferrer" className="festival-social-tag">X: {FESTIVAL_X}</a>
       </div>
     </PageShell>
   );
@@ -616,7 +601,7 @@ function Page7() {
             'Conta bancária exclusiva em nome do proponente para movimentação do projeto',
           ]} />
         </div>
-        <Callout tone="warning" title="Após a captação">
+        <Callout tone="warning" title="Entrega da DI">
           O proponente entrega a DI em quatro vias, assinadas pelo proponente e assinadas/carimbadas pelo incentivador, acompanhada dos documentos da empresa e da CND do incentivador.
         </Callout>
       </Section>

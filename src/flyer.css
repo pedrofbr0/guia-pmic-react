@@ -188,6 +188,7 @@ img { max-width: 100%; }
   margin: 0 0 3mm;
   padding: 0;
   list-style: none;
+  counter-reset: step;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2mm 6mm;
@@ -398,9 +399,8 @@ img { max-width: 100%; }
   color: var(--festival-cream);
   text-decoration: none;
   line-height: 1.35;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .flyer-cta__cluster-links a:hover {
@@ -466,4 +466,44 @@ img { max-width: 100%; }
   }
 
   .flyer-body { overflow: hidden; }
+}
+
+@media screen and (max-width: 900px) {
+  .flyer-preview-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .flyer-page {
+    width: 100%;
+    min-height: auto;
+    margin: 0 0 24px;
+  }
+
+  .flyer-top__text {
+    max-width: none;
+  }
+
+  .flyer-top__logoWrap {
+    position: static;
+    margin-top: 4mm;
+  }
+
+  .flyer-metrics,
+  .flyer-steps,
+  .flyer-who__grid,
+  .flyer-highlight,
+  .flyer-cta__links {
+    grid-template-columns: 1fr;
+  }
+
+  .flyer-highlight {
+    grid-template-columns: 1fr;
+  }
+
+  .flyer-footer__row {
+    flex-wrap: wrap;
+    gap: 2mm 5mm;
+  }
 }

@@ -5,11 +5,8 @@ const SITE_NAME = SITE_URL.replace('https://www.', '');
 const FESTIVAL_EMAIL = 'festivalmaisqueviaduto@gmail.com';
 const FESTIVAL_INSTAGRAM = '@festivalmaisqueviaduto';
 const FESTIVAL_INSTAGRAM_URL = `https://www.instagram.com/${FESTIVAL_INSTAGRAM.replace('@', '')}`;
-const FESTIVAL_TIKTOK = '@festivalmaisqueviaduto';
-const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/${FESTIVAL_TIKTOK.replace('@', '')}`;
-const FESTIVAL_X_URL = 'https://x.com/maisqueviaduto';
-const FESTIVAL_X = '@maisqueviaduto';
 const PMIC_SITE = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultura-e-turismo/pmic/';
+const PMIC_SITE_PATH = PMIC_SITE.replace('https://', '');
 const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/07/7152.pdf';
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
 
@@ -86,8 +83,8 @@ export default function Flyer() {
               <strong>Por que participar?</strong>
               <p>
                 Transforme uma obrigação tributária em investimento cultural com visibilidade e
-                retorno de imagem. Sua empresa apoia a cultura local e obtém dedução fiscal —
-                tudo dentro da lei.
+                retorno de imagem. Se o projeto não alcançar a captação mínima para execução,
+                ele é tratado como não realizado, sem penalidade adicional para a empresa.
               </p>
             </div>
           </div>
@@ -117,9 +114,9 @@ export default function Flyer() {
             <div className="flyer-highlight__content">
               <h2 className="flyer-heading">Festival Mais Que Viaduto 2026</h2>
               <p>
-                O <strong>+QV</strong> é um dos projetos culturais aprovados pelo PMIC. Ao apoiar o festival,
-                sua empresa se associa a um evento que movimenta a cena cultural de Uberlândia —
-                com música, exposição de artes, comidas e bebidas, ocupando os espaços públicos.
+                O <strong>+QV</strong> é um dos projetos culturais aprovados para captação via PMIC em 2026.
+                Ao apoiar o festival, sua empresa se associa a um evento que movimenta a cena cultural
+                de Uberlândia com música, artes visuais, gastronomia e ocupação qualificada dos espaços públicos.
               </p>
               <div className="flyer-highlight__tags">
                 <span>Cultura</span>
@@ -146,7 +143,7 @@ export default function Flyer() {
             <div className="flyer-cta__cluster">
               <div className="flyer-cta__cluster-links">
                 <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer">
-                  {PMIC_SITE.replace('https://', '')}
+                  {PMIC_SITE_PATH}
                 </a>
                 <a href="tel:+553432143266">(34) 3214-3266</a>
                 <a href="mailto:pmic@uberlandia.mg.gov.br">pmic@uberlandia.mg.gov.br</a>
@@ -169,7 +166,7 @@ export default function Flyer() {
         <footer className="flyer-footer">
           <div className="flyer-footer__row flyer-footer__row--site">
             <span>
-              Norma vigente: <a href={PORTARIA_SMCT_N_55_2025_URL} target="_blank" rel="noopener noreferrer">Portaria Conjunta SMCT/SMF nº 55/2025</a> · Lei Municipal nº 14.006/2023 sobre o <a href={EDITAL_SMCT_N_11_2025_URL} target="_blank" rel="noopener noreferrer">Edital SMCT nº 11/2025</a>
+              Norma vigente: <a href={PORTARIA_SMCT_N_55_2025_URL} target="_blank" rel="noopener noreferrer">Portaria Conjunta SMCT/SMF nº 55/2025</a> · <a href={EDITAL_SMCT_N_11_2025_URL} target="_blank" rel="noopener noreferrer">Edital SMCT nº 11/2025</a> · Lei Municipal nº 14.006/2023
             </span>
           </div>
         </footer>
