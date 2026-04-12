@@ -7,7 +7,8 @@
     "preview": "vite preview",
     "export:pdf": "node scripts/export-pdf.mjs",
     "export:flyer": "node scripts/export-flyer.mjs",
-    "export:figma": "node scripts/export-figma.mjs"
+    "export:figma": "node scripts/export-figma.mjs",
+    "export:canva": "node scripts/export-canva.mjs"
   },
   "devDependencies": {
     "@types/react-dom": "^19.2.3",
