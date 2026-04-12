@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--figma-color-text, #333);
+    background: var(--figma-color-bg, #fff);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100vh;
+  }
+  h2 { font-size: 16px; font-weight: 700; }
+  p.sub { font-size: 12px; color: var(--figma-color-text-secondary, #888); }
+
+  /* drop zone */
+  .drop-zone {
+    border: 2px dashed var(--figma-color-border, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: background .15s, border-color .15s;
+    cursor: pointer;
+    position: relative;
+  }
+  .drop-zone.over {
+    border-color: var(--figma-color-bg-brand, #18a0fb);
+    background: var(--figma-color-bg-hover, #f0f8ff);
+  }
+  .drop-zone input[type="file"] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer;
+  }
+
+  /* textarea */
+  textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 120px;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 8px;
+    border: 1px solid var(--figma-color-border, #ccc);
+    border-radius: 6px;
+    resize: vertical;
+    background: var(--figma-color-bg-secondary, #fafafa);
+    color: var(--figma-color-text, #333);
+  }
+
+  /* buttons */
+  .actions { display: flex; gap: 8px; }
+  button {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  #importBtn {
+    background: var(--figma-color-bg-brand, #18a0fb);
+    color: #fff;
+  }
+  #importBtn:hover { filter: brightness(.9); }
+  #importBtn:disabled { opacity: .5; cursor: not-allowed; }
+  #cancelBtn {
+    background: var(--figma-color-bg-secondary, #eee);
+    color: var(--figma-color-text, #333);
+    flex: 0.4;
+  }
+  #cancelBtn:hover { filter: brightness(.9); }
+
+  /* progress */
+  .progress {
+    display: none;
+    padding: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--figma-color-text-brand, #18a0fb);
+  }
+
+  .info {
+    font-size: 11px;
+    color: var(--figma-color-text-tertiary, #aaa);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h2>Importar Design HTML → Figma</h2>
+<p class="sub">Cole ou arraste o JSON gerado por <code>npm run export:figma</code></p>
+
+<div class="drop-zone" id="dropZone">
+  📁 Arraste o arquivo JSON aqui ou clique para selecionar
+  <input type="file" accept=".json" id="fileInput" />
+</div>
+
+<textarea id="jsonInput" placeholder='Ou cole o conteúdo do arquivo figma-guide.json / figma-flyer.json aqui…'></textarea>
+
+<div class="progress" id="progress">Importando…</div>
+
+<div class="actions">
+  <button id="importBtn">Importar no Figma</button>
+  <button id="cancelBtn">Fechar</button>
+</div>
+
+<p class="info">Gerado por export-figma · Textos, retângulos e imagens ficam editáveis.</p>
+
+<script>
+  const dropZone  = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const jsonInput = document.getElementById('jsonInput');
+  const importBtn = document.getElementById('importBtn');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const progress  = document.getElementById('progress');
+
+  /* --- drag & drop --- */
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('over');
+    const f = e.dataTransfer.files[0];
+    if (f) loadFile(f);
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) loadFile(fileInput.files[0]);
+  });
+
+  function loadFile(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      jsonInput.value = reader.result;
+      dropZone.textContent = '✓ ' + file.name;
+    };
+    reader.readAsText(file);
+  }
+
+  /* --- import --- */
+  importBtn.addEventListener('click', () => {
+    const raw = jsonInput.value.trim();
+    if (!raw) return alert('Nenhum JSON fornecido.');
+    let data;
+    try {
+      data = JSON.parse(raw);
+    } catch (e) {
+      return alert('JSON inválido: ' + e.message);
+    }
+    if (!data.pages || !data.pages.length) {
+      return alert('O JSON não contém "pages".');
+    }
+    importBtn.disabled = true;
+    progress.style.display = 'block';
+    progress.textContent = 'Importando…';
+    parent.postMessage({ pluginMessage: { type: 'import', data } }, '*');
+  });
+
+  cancelBtn.addEventListener('click', () => {
+    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+  });
+
+  /* --- progress messages from plugin --- */
+  window.onmessage = (e) => {
+    const msg = e.data.pluginMessage;
+    if (!msg) return;
+    if (msg.type === 'progress') {
+      progress.textContent = `Importando página ${msg.current} de ${msg.total}…`;
+      if (msg.current >= msg.total) {
+        setTimeout(() => {
+          progress.textContent = '✓ Importação concluída!';
+          importBtn.disabled = false;
+        }, 500);
+      }
+    }
+  };
+</script>
+</body>
+</html>
