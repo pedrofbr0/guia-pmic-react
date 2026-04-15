@@ -129,7 +129,7 @@ const TIMELINE_STEPS_PART1: Step[] = [
     step: 2,
     title: 'Verificar elegibilidade tributária',
     content:
-      'Antes de qualquer anúncio de apoio, confira com seu contador: se é contribuinte de ISSQN ou IPTU no município; se está regular perante o Município; se não é optante pelo Simples Nacional (caso de ISS); e se há viabilidade para a dedução pretendida.',
+      'Antes de qualquer formalização ou anúncio público de apoio via incentivo fiscal, a empresa deve confirmar com seu contador se é contribuinte de ISSQN ou IPTU no Município, se está regular perante a Prefeitura, se não é optante pelo Simples Nacional nos casos de ISS e se há viabilidade para a dedução pretendida.',
   },
   {
     step: 3,
@@ -199,7 +199,7 @@ const TIMELINE_STEPS_PART2: Step[] = [
     step: 10,
     title: 'Acompanhar execução e comunicação',
     content:
-      'É obrigatória a menção ao Município de Uberlândia, à SMCT e ao PMIC com uso das logomarcas em todos os materiais. As artes devem ser enviadas com antecedência para aprovação. O apoio está vinculado a um projeto público com prestação de contas.',
+      'A comunicação do projeto incentivado deve observar as regras públicas do PMIC, inclusive a menção ao Município de Uberlândia, à Secretaria Municipal de Cultura e Turismo e ao PMIC, com uso das logomarcas e submissão prévia das artes quando exigido. A participação da empresa como incentivadora no âmbito do PMIC não se confunde, por si só, com contratação de contrapartidas promocionais específicas.',
   },
 ];
 
@@ -405,7 +405,7 @@ function Page3() {
           </article>
         </div>
         <Callout tone="success" title="Na prática">
-          A empresa transforma uma obrigação tributária em investimento cultural com visibilidade e retorno de imagem. O recurso que iria para o caixa do município é direcionado a um projeto cultural de sua escolha — não é um gasto a mais, é um redirecionamento inteligente.
+          A empresa pode direcionar parte do ISSQN ou do IPTU devido ao Município para um projeto cultural aprovado, dentro dos limites e condições previstos na legislação aplicável. Trata-se de um mecanismo de incentivo fiscal, sujeito à análise e autorização do Poder Público, e não de uma contratação comercial automática de ações promocionais.
         </Callout>
         <p className="small-note">
           <strong>Importante:</strong> A dedução não é automática. A Portaria Conjunta SMCT/SMF nº 55/2025 (DOM nº 7152, 23/07/2025) define critérios de viabilidade fiscal analisados pela Secretaria Municipal de Finanças. Detalhes nos capítulos seguintes.
@@ -469,10 +469,11 @@ function Page4() {
           <article className="festival-offer-card festival-offer-card--fire">
             <header>O que o PMIC oferece ao incentivador</header>
             <BulletList items={[
-              'Dedução fiscal de até 25% sobre o ISSQN ou IPTU devidos ao município',
-              'Nome da empresa registrado como incentivadora de projeto cultural aprovado pela Prefeitura',
-              'Associação pública a um projeto com prestação de contas obrigatória e transparente',
-              'Atestado documentado de responsabilidade social e apoio à cultura local',
+              'Possibilidade de dedução fiscal de até 25% sobre o ISSQN ou o IPTU, nos termos da legislação aplicável e mediante autorização do Município',
+              'Vinculação institucional da empresa a um projeto cultural aprovado no PMIC',
+              'Participação em um mecanismo público, com regras formais, prestação de contas e acompanhamento administrativo',
+              'Associação da marca ao apoio à cultura local e à responsabilidade sociocultural, sempre observadas as normas de comunicação do programa',
+              'Eventual identificação da empresa como incentivadora nos materiais do projeto, quando cabível, sem que isso configure, por si só, pacote de contrapartidas comerciais',
             ]} />
           </article>
         </div>
@@ -535,7 +536,7 @@ function Page5() {
           <a href={`mailto:${FESTIVAL_EMAIL}`} style={{ color: 'inherit' }}>{FESTIVAL_EMAIL}</a> para confirmar aptidão à captação.
         </Callout>
         <Callout tone="important" title="Proibido">
-          A lei proíbe o incentivador de alterar planilha orçamentária, metas ou ações do projeto aprovado. Isso pode levar ao cancelamento do projeto e à responsabilização.
+          O incentivador não pode interferir no conteúdo, nas metas, nas ações, na planilha orçamentária ou na execução do projeto aprovado, salvo nos limites legalmente permitidos e sem prejuízo da autonomia do projeto e das regras do PMIC. Qualquer tentativa de alteração indevida pode comprometer a regularidade do incentivo e a execução do projeto.
         </Callout>
       </Section>
     </PageShell>
