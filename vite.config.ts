@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         flyer: resolve(__dirname, 'flyer.html'),
+        proposal: resolve(__dirname, 'proposal.html'),
       },
     },
   },
