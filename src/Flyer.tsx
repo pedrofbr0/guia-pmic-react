@@ -9,6 +9,8 @@ const PMIC_SITE = 'https://www.uberlandia.mg.gov.br/prefeitura/secretarias/cultu
 const PMIC_SITE_PATH = PMIC_SITE.replace('https://', '');
 const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/07/7152.pdf';
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
+const GUIA_PMIC_URL = 'https://www.festivalmaisqueviaduto.com.br/public/GUIA-PMIC-2026.pdf';
+const GUIA_PMIC_URL_PATH = GUIA_PMIC_URL.replace('https://www.', '');
 
 export default function Flyer() {
   return (
@@ -124,6 +126,9 @@ export default function Flyer() {
                 <span>Artes</span>
                 <span>Incentivo Fiscal</span>
               </div>
+              <p className="flyer-highlight__guide">
+                Baixe o <a href={GUIA_PMIC_URL} target="_blank" rel="noopener noreferrer"><strong>Guia PMIC 2026</strong></a><a href={GUIA_PMIC_URL} target="_blank" rel="noopener noreferrer" > ({GUIA_PMIC_URL_PATH})</a> com o passo a passo completo para formalizar o incentivo.
+              </p>
             </div>
           </div>
         </div>
@@ -136,7 +141,11 @@ export default function Flyer() {
           aria-hidden="true"
         />
 
-        {/* ── CTA band ── */}
+        {/* ── Flex spacer (print only) ── */}
+        <div className="flyer-spacer" aria-hidden="true" />
+
+        {/* ── CTA band + Footer ── */}
+        <div className="flyer-bottom">
         <div className="flyer-cta">
           <strong>Quer saber mais? Acesse os links e entre em contato</strong>
           <div className="flyer-cta__links">
@@ -154,6 +163,7 @@ export default function Flyer() {
             <div className="flyer-cta__cluster">
               <div className="flyer-cta__cluster-links">
                 <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
+                <a href={GUIA_PMIC_URL} target="_blank" rel="noopener noreferrer">{GUIA_PMIC_URL_PATH}</a>
                 <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
                 <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
               </div>
@@ -170,6 +180,7 @@ export default function Flyer() {
             </span>
           </div>
         </footer>
+        </div>
       </section>
     </div>
   );

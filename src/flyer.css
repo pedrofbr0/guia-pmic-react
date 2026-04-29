@@ -324,7 +324,7 @@ img { max-width: 100%; }
 }
 
 .flyer-highlight__content p {
-  margin: 0 0 3mm;
+  margin: 0 0 2.5mm;
   font-size: 9pt;
   line-height: 1.5;
 }
@@ -333,6 +333,7 @@ img { max-width: 100%; }
   display: flex;
   gap: 2mm;
   flex-wrap: wrap;
+  margin-bottom: 3mm;
 }
 
 .flyer-highlight__tags span {
@@ -343,6 +344,18 @@ img { max-width: 100%; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.flyer-highlight__guide {
+  margin: 0;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  color: var(--festival-deep);
+}
+
+.flyer-highlight__guide a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ── CTA band ───────────────────────────────────── */
@@ -407,10 +420,19 @@ img { max-width: 100%; }
   text-decoration: underline;
 }
 
-/* ── Footer ─────────────────────────────────────── */
+/* ── Bottom wrapper (CTA + footer) ────────────── */
+
+.flyer-spacer {
+  display: none; /* visible only in print via @media print override */
+}
+
+.flyer-bottom {
+  margin-top: auto;
+}
+
+/* ── Footer ─────────────────────────────────── */
 
 .flyer-footer {
-  margin-top: auto;
 }
 
 .flyer-footer__row {
@@ -465,7 +487,47 @@ img { max-width: 100%; }
     overflow: hidden;
   }
 
-  .flyer-body { overflow: hidden; }
+  /* Body shrinks to content height; spacer fills the remaining gap */
+  .flyer-body {
+    flex: none;
+    overflow: hidden;
+    padding-top: 3mm;
+    padding-bottom: 1mm;
+  }
+
+  /* Invisible flex spacer: fills gap between content and bottom wrapper */
+  .flyer-spacer {
+    display: none;
+  }
+
+  /* Bottom wrapper follows spacer — no extra margin needed */
+  .flyer-bottom {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: static;
+    margin-top: 0;
+  }
+
+  .flyer-footer {
+    margin-top: auto;
+  }
+
+  .flyer-metrics { margin-bottom: 2.5mm; }
+
+  .flyer-steps { margin-bottom: 2mm; }
+  .flyer-steps li { font-size: 8.5pt; }
+
+  .flyer-callout { margin-bottom: 2mm; padding: 2mm 3.5mm; }
+  .flyer-callout p { font-size: 8.5pt; }
+
+  .flyer-who { margin-bottom: 2mm; }
+  .flyer-who__item { padding: 1.5mm 3mm; font-size: 8.5pt; }
+
+  .flyer-highlight { margin-top: 1mm; padding: 2.5mm 3.5mm; }
+  .flyer-highlight__content p { font-size: 8.5pt; margin-bottom: 2mm; }
+  .flyer-highlight__tags { margin-bottom: 2mm; }
+  .flyer-highlight__guide { font-size: 8pt; }
 }
 
 @media screen and (max-width: 900px) {
