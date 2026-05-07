@@ -11,13 +11,32 @@ const PORTARIA_SMCT_N_55_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-conten
 const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/uploads/2025/06/EDITAL-SMCT-N-112025.pdf';
 const GUIA_PMIC_URL = 'https://www.festivalmaisqueviaduto.com.br/public/GUIA-PMIC-2026.pdf';
 const GUIA_PMIC_URL_PATH = GUIA_PMIC_URL.replace('https://www.', '');
+const PRINT_SAFE_TITLE = 'flyer-pmic-udi-2026-festival-mais-que-viaduto';
 
 export default function Flyer() {
+  const handlePrint = async () => {
+    const originalTitle = document.title;
+
+    try {
+      if ('fonts' in document) {
+        await document.fonts.ready;
+      }
+
+      // Use an ASCII-only title to avoid PDF filename issues on some Windows print drivers.
+      document.title = PRINT_SAFE_TITLE;
+      window.print();
+    } finally {
+      window.setTimeout(() => {
+        document.title = originalTitle;
+      }, 500);
+    }
+  };
+
   return (
     <div className="flyer-shell">
       <div className="flyer-preview-toolbar no-print">
         <span>Preview do flyer PDF</span>
-        <button onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+        <button onClick={handlePrint}>Imprimir / Salvar PDF</button>
       </div>
 
       <section className="flyer-page">

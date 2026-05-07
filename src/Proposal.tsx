@@ -19,6 +19,9 @@ const FESTIVAL_TIKTOK_URL = `https://www.tiktok.com/@${FESTIVAL_TIKTOK.replace('
 const FESTIVAL_X = '@maisqueviaduto';
 const FESTIVAL_X_URL = 'https://x.com/maisqueviaduto';
 const FESTIVAL_LOGO = '/logos/LOGO - FESTIVAL +QV 2026.png';
+const GUIA_PMIC_URL = 'https://www.festivalmaisqueviaduto.com.br/public/GUIA-PMIC-2026.pdf';
+const GUIA_PMIC_URL_PATH = GUIA_PMIC_URL.replace('https://www.', '');
+const PRINT_SAFE_TITLE = 'proposta-comercial-qv-2026';
 
 const TOC_ENTRIES: TocEntry[] = [
   {
@@ -772,11 +775,9 @@ function Page11() {
           eles serão tratados separadamente.
         </Callout>
         <p>
-          Para entender a elegibilidade e o procedimento do incentivo fiscal, solicite nosso{' '}
-          <strong>Guia PMIC UDI 2026</strong> pelo e-mail{' '}
-          <a href={`mailto:${FESTIVAL_EMAIL}`} style={{ color: 'var(--festival-deep)' }}>
-            {FESTIVAL_EMAIL}
-          </a>.
+          Para entender a elegibilidade e o procedimento do incentivo fiscal, acesse nosso <a href={GUIA_PMIC_URL} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer"><strong>Guia PMIC UDI 2026</strong></a> no link <a href={GUIA_PMIC_URL} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
+            {GUIA_PMIC_URL_PATH}
+          </a> ou entre em contato para mais informações pelo e-mail <a href={`mailto:${FESTIVAL_EMAIL}`} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}}>{FESTIVAL_EMAIL}</a>.
         </p>
       </Section>
     </PageShell>
@@ -897,13 +898,31 @@ function Page12() {
 /* ─── Root ────────────────────────────────────────────────────── */
 
 export default function Proposal() {
+  const handlePrint = async () => {
+    const originalTitle = document.title;
+
+    try {
+      if ('fonts' in document) {
+        await document.fonts.ready;
+      }
+
+      // Use an ASCII-only title to avoid PDF filename issues on some Windows print drivers.
+      document.title = PRINT_SAFE_TITLE;
+      window.print();
+    } finally {
+      window.setTimeout(() => {
+        document.title = originalTitle;
+      }, 500);
+    }
+  };
+
   return (
     <div className="guide-shell">
       <div className="guide-preview-toolbar no-print">
         <span>Preview — Proposta Comercial +QV 2026 · {TOTAL_PAGES} páginas</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span style={{ fontSize: '12px', opacity: 0.7 }}>Para PDF perfeito: npm run export:proposal</span>
-          <button onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+          <button onClick={handlePrint}>Imprimir / Salvar PDF</button>
         </div>
       </div>
       <div className="guide-document">

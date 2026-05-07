@@ -28,6 +28,7 @@ const EDITAL_SMCT_N_11_2025_URL = 'https://docs.uberlandia.mg.gov.br/wp-content/
 const EDITAL_SMCT_N_11_2025_URL_PATH = EDITAL_SMCT_N_11_2025_URL.replace('https://', '');
 const EDITAL_SMCT_N_11_2025_REF = 'Edital SMCT nº 11/2025 — PMIC Exercício 2026';
 const FESTIVAL_LOGO = '/logos/LOGO - FESTIVAL +QV 2026.png';
+const PRINT_SAFE_TITLE = 'guia-pmic-udi-2026-festival-mais-que-viaduto';
 
 const TOC_ENTRIES: TocEntry[] = [
   {
@@ -849,13 +850,31 @@ function Page12() {
 /* ─── Root ────────────────────────────────────────────────────── */
 
 export default function App() {
+  const handlePrint = async () => {
+    const originalTitle = document.title;
+
+    try {
+      if ('fonts' in document) {
+        await document.fonts.ready;
+      }
+
+      // Use an ASCII-only title to avoid PDF filename issues on some Windows print drivers.
+      document.title = PRINT_SAFE_TITLE;
+      window.print();
+    } finally {
+      window.setTimeout(() => {
+        document.title = originalTitle;
+      }, 500);
+    }
+  };
+
   return (
     <div className="guide-shell">
       <div className="guide-preview-toolbar no-print">
         <span>Preview do documento PDF — {TOTAL_PAGES} páginas</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <span style={{ fontSize: '12px', opacity: 0.7 }}>Para PDF perfeito: npm run export:pdf</span>
-          <button onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+          <button onClick={handlePrint}>Imprimir / Salvar PDF</button>
         </div>
       </div>
       <div className="guide-document">
