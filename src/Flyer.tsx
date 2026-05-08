@@ -173,8 +173,8 @@ export default function Flyer() {
                 <a href={PMIC_SITE} target="_blank" rel="noopener noreferrer">
                   {PMIC_SITE_PATH}
                 </a>
-                <a href="tel:+553432143266">(34) 3214-3266</a>
-                <a href="mailto:pmic@uberlandia.mg.gov.br">pmic@uberlandia.mg.gov.br</a>
+                <a href="tel:+553432143266" target="_blank" rel="noopener noreferrer">(34) 3214-3266</a>
+                <a href="mailto:pmic@uberlandia.mg.gov.br" target="_blank" rel="noopener noreferrer">pmic@uberlandia.mg.gov.br</a>
               </div>
               <h3 className="flyer-cta__cluster-title">PMIC Uberlândia</h3>
             </div>
@@ -183,7 +183,7 @@ export default function Flyer() {
               <div className="flyer-cta__cluster-links">
                 <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
                 <a href={GUIA_PMIC_URL} target="_blank" rel="noopener noreferrer">{GUIA_PMIC_URL_PATH}</a>
-                <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+                <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a>
                 <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
               </div>
               <h3 className="flyer-cta__cluster-title">Festival +QV</h3>

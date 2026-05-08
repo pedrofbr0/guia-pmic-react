@@ -246,8 +246,10 @@ function GuideHeader() {
         <img src={FESTIVAL_LOGO} alt="Logo do Festival Mais Que Viaduto" className="pdf-header__logo" />
       </div>
       <div className="pdf-header__copy">
-        <div className="pdf-header__eyebrow">GUIA PMIC UDI — 2026</div>
-        <div className="pdf-header__title">Como empresas podem apoiar cultura e deduzir até 25% do ISSQN ou IPTU</div>
+        <a href="#page-2" className="pdf-header__homeLink" aria-label="Voltar ao sumário do guia">
+          <div className="pdf-header__eyebrow">GUIA PMIC UDI — 2026</div>
+          <div className="pdf-header__title">Como empresas podem apoiar cultura e deduzir até 25% do ISSQN ou IPTU</div>
+        </a>
       </div>
     </header>
   );
@@ -260,7 +262,7 @@ function GuideFooter({ page }: { page: number }) {
         <div className="pdf-footer__contacts">
           <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
           <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
-          <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+          <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a>
         </div>
         <div className="pdf-footer__page">{page} / {TOTAL_PAGES}</div>
       </div>
@@ -332,7 +334,7 @@ function CoverPage() {
         <div className="cover-footer__row">
           <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
           <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
-          <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+          <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a>
         </div>
       </footer>
     </section>
@@ -534,7 +536,7 @@ function Page5() {
         </div>
         <Callout tone="info" title="Festival +QV">
           O Festival +QV é um projeto de <strong>grande porte</strong> (R$ 85k–150k). Entre em contato pelo e-mail{' '}
-          <a href={`mailto:${FESTIVAL_EMAIL}`} style={{ color: 'inherit' }}>{FESTIVAL_EMAIL}</a> para confirmar aptidão à captação.
+          <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>{FESTIVAL_EMAIL}</a> para confirmar aptidão à captação.
         </Callout>
         <Callout tone="important" title="Proibido">
           O incentivador não pode interferir no conteúdo, nas metas, nas ações, na planilha orçamentária ou na execução do projeto aprovado, salvo nos limites legalmente permitidos e sem prejuízo da autonomia do projeto e das regras do PMIC. Qualquer tentativa de alteração indevida pode comprometer a regularidade do incentivo e a execução do projeto.
@@ -782,7 +784,7 @@ function Page12() {
             </thead>
             <tbody>
               <tr><td>Site</td><td><a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a></td></tr>
-              <tr><td>E-mail</td><td><a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a></td></tr>
+              <tr><td>E-mail</td><td><a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a></td></tr>
               <tr><td>Instagram</td><td><a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a></td></tr>
               <tr><td>TikTok</td><td><a href={FESTIVAL_TIKTOK_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_TIKTOK}</a></td></tr>
               <tr><td>X (Twitter)</td><td><a href={FESTIVAL_X_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_X}</a></td></tr>
@@ -825,7 +827,7 @@ function Page12() {
               </div>
               <div>
                 <strong>E-mail</strong><br />
-                <a href="mailto:pmic@uberlandia.mg.gov.br">pmic@uberlandia.mg.gov.br</a>
+                <a href="mailto:pmic@uberlandia.mg.gov.br" target="_blank" rel="noopener noreferrer">pmic@uberlandia.mg.gov.br</a>
               </div>
             </div>
           </div>

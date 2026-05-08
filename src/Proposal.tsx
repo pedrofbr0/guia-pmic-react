@@ -263,8 +263,10 @@ function ProposalHeader() {
         <img src={FESTIVAL_LOGO} alt="Logo do Festival Mais Que Viaduto" className="pdf-header__logo" />
       </div>
       <div className="pdf-header__copy">
-        <div className="pdf-header__eyebrow">PROPOSTA COMERCIAL — FESTIVAL +QV 2026</div>
-        <div className="pdf-header__title">Cotas de patrocínio direto para marcas que querem presença real no festival</div>
+        <a href="#page-2" className="pdf-header__homeLink" aria-label="Voltar ao sumário da proposta comercial">
+          <div className="pdf-header__eyebrow">PROPOSTA COMERCIAL — FESTIVAL +QV 2026</div>
+          <div className="pdf-header__title">Cotas de patrocínio direto para marcas que querem presença real no festival</div>
+        </a>
       </div>
     </header>
   );
@@ -277,7 +279,7 @@ function ProposalFooter({ page }: { page: number }) {
         <div className="pdf-footer__contacts">
           <a href={SITE_URL} target="_blank" rel="noopener noreferrer">{SITE_NAME}</a>
           <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
-          <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+          <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a>
         </div>
         <div className="pdf-footer__page">{page} / {TOTAL_PAGES}</div>
       </div>
@@ -329,7 +331,7 @@ function CoverPage() {
         </div>
         <div className="cover-footer__row">
           <a href={FESTIVAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">{FESTIVAL_INSTAGRAM}</a>
-          <a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a>
+          <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a>
           <span>26 e 27 de setembro de 2026 · Uberlândia, MG</span>
         </div>
       </footer>
@@ -777,7 +779,7 @@ function Page11() {
         <p>
           Para entender a elegibilidade e o procedimento do incentivo fiscal, acesse nosso <a href={GUIA_PMIC_URL} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer"><strong>Guia PMIC UDI 2026</strong></a> no link <a href={GUIA_PMIC_URL} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
             {GUIA_PMIC_URL_PATH}
-          </a> ou entre em contato para mais informações pelo e-mail <a href={`mailto:${FESTIVAL_EMAIL}`} style={{ color: 'var(--festival-deep)', textDecoration: 'none'}}>{FESTIVAL_EMAIL}</a>.
+          </a> ou entre em contato para mais informações pelo e-mail <a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--festival-deep)', textDecoration: 'none'}}>{FESTIVAL_EMAIL}</a>.
         </p>
       </Section>
     </PageShell>
@@ -805,7 +807,7 @@ function Page12() {
             <tbody>
               <tr>
                 <td>E-mail</td>
-                <td><a href={`mailto:${FESTIVAL_EMAIL}`}>{FESTIVAL_EMAIL}</a></td>
+                <td><a href={`mailto:${FESTIVAL_EMAIL}`} target="_blank" rel="noopener noreferrer">{FESTIVAL_EMAIL}</a></td>
               </tr>
               <tr>
                 <td>Instagram</td>
